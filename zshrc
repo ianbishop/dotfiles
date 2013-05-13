@@ -5,11 +5,16 @@ fpath=(~/.zsh/completion $fpath)
 autoload -U compinit
 compinit
 
+for function in ~/.zsh/functions/*; do
+  source $function
+done
+
 # automatically enter directories without cd
 setopt auto_cd
 
-# use vim as an editor
-export EDITOR=vim
+# use vim as the visual editor
+export VISUAL=vim
+export EDITOR=$VISUAL
 
 # aliases
 if [ -e "$HOME/.aliases" ]; then
