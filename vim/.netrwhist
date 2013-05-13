@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/ian/.vim'
+let g:netrw_dirhist_2='/home/ian/code/import-tool/.git'
+let g:netrw_dirhist_3='/home/ian/code/curator-clj/.git'
+let g:netrw_dirhist_4='/home/ian/code/cxengage/conf'
+let g:netrw_dirhist_5='/home/ian/code/sleepy-hollow/.git'
+let g:netrw_dirhist_6='/home/ian/code/cxengage/conf'
+let g:netrw_dirhist_7='/home/ian/code/cxengage-cli/conf'
+let g:netrw_dirhist_8='/home/ian/code/teddy/.git'

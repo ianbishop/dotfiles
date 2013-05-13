@@ -8,6 +8,8 @@ set nowritebackup
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 
+call pathogen#infect()
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -50,13 +52,26 @@ if executable("ack")
 endif
 
 " Color scheme
-colorscheme vividchalk
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+let g:NERDTreeWinSize = 20
+set background=dark
+colorscheme solarized
+" highlight NonText guibg=#060606
+" highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
+set guioptions+=LlRrb
+set guioptions-=LlRrb
+
+set noeb vb t_vb=
 
 " Numbers
-set number
+set relativenumber
 set numberwidth=5
+
+set undofile
+nnoremap <F5> :GundoToggle<CR>
+
+" remove trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
@@ -76,6 +91,13 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
+
+" NERD Togglin
+let g:nerdtree_tabs_open_on_console_startup = 1
+
+let g:gitgutter_enabled = 1
+sign define dummy
+execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
 
 " Tags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
@@ -104,3 +126,15 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Space is inserted via <C-v><Space>
 " see ':h map_space' in vim for further info
 let mapleader = " "
+
+" Paredit
+let g:paredit_mode = 1
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+autocmd BufRead,BufNewFile *.cljs setlocal filetype=clojure
+
+highlight clear SignColumn
