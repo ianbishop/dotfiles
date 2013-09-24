@@ -120,10 +120,11 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
+map <leader>s :%!git stripspace<CR>
+
+" Github Comment
+let g:github_user = 'ianbishop'
+let g:github_comment_open_browser = 1
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -132,6 +133,7 @@ let g:html_indent_tags = 'li\|p'
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.cljs setlocal filetype=clojure
+autocmd BufRead,BufNewFile *.hbs setlocal filetype=handlebars
 
 " Enable spellchecking for Markdown
 au BufRead,BufNewFile *.md setlocal spell
