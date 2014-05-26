@@ -4,9 +4,9 @@ thoughtbot dotfiles
 Requirements
 ------------
 
-Set zsh as your login shell.
+Set zsh as your login shell:
 
-    chsh -s /bin/zsh
+    chsh -s $(which zsh)
 
 Install
 -------
@@ -20,16 +20,16 @@ updated](http://robots.thoughtbot.com/keeping-a-github-fork-updated)).
 
 Install [rcm](https://github.com/thoughtbot/rcm):
 
-    brew bundle
+    brew bundle dotfiles/Brewfile
 
 Install:
 
-    rcup -d dotfiles -x README.md -x LICENSE
+    rcup -d dotfiles -x README.md -x LICENSE -x Brewfile
 
-This will create symlinks for config files in your home directory. The
-`-x` options, which exclude the `README.md` and `LICENSE` files, are
-needed during installation but can be skipped once the `.rcrc`
-configuration file is symlinked in.
+This will create symlinks for config files in your home directory. The `-x`
+options, which exclude the `README.md`, `LICENSE`, and `Brewfile` files, are
+needed during installation but can be skipped once the `.rcrc` configuration
+file is symlinked in.
 
 You can safely run `rcup` multiple times to update:
 
@@ -121,11 +121,8 @@ Shell aliases and scripts:
 * `git-churn` to show churn for the files changed in the branch.
 * `m` for `rake db:migrate && rake db:rollback && rake db:migrate && rake db:test:prepare`.
 * `mcd` to make a directory and change into it.
-* `rake` is `zeus rake` if using [Zeus](https://github.com/burke/zeus) on the
-  project in current directory.
 * `replace foo bar **/*.rb` to find and replace within a given list of files.
 * `rk` for `rake`.
-* `rspec` is `zeus rspec` if using Zeus on the project in current directory.
 * `tat` to attach to tmux session named the same as the current directory.
 * `v` for `$VISUAL`.
 
