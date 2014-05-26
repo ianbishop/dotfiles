@@ -1,5 +1,5 @@
 [push]
-  default = upstream
+  default = current
 [color]
   ui = auto
 [format]
@@ -23,3 +23,7 @@
   autocrlf = input
 [merge]
   ff = only
+[include]
+  path = .gitconfig.local
+[commit]
+  template = ~/.gitmessage
