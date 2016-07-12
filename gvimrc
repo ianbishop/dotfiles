@@ -10,6 +10,7 @@ set guioptions+=c
 set viminfo+=!
 
 set gfn=Source\ Code\ Pro\ 12
+set guifont=Source\ Code\ Pro\ Medium\ 11
 
 set mouseshape=n:beam,ve:beam,sd:updown
 

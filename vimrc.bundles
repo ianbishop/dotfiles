@@ -10,24 +10,24 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
-Bundle 'christoomey/vim-run-interactive'
-Bundle 'croaky/vim-colors-github'
-Bundle 'danro/rename.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'pbrisbin/vim-mkdir'
+Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'slim-template/vim-slim'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/matchit.zip'
-Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/tComment'
+
+Bundle 'skwp/greplace.vim'
+Bundle 'emezeske/paredit.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'tpope/vim-classpath'
+Bundle 'tpope/vim-fireplace'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'pangloss/vim-javascript'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'tpope/vim-leiningen'
+Bundle 'w0ng/vim-hybrid'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

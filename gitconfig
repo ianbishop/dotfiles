@@ -29,3 +29,6 @@
   template = ~/.gitmessage
 [fetch]
   prune = true
+[user]
+	email = ibishop@liveops.com
+	name = Ian Bishop
